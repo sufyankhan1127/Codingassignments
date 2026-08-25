@@ -31,7 +31,9 @@ public class task {
 			System.out.println("Enter the id for deletion:");
 			int delid=scan.nextInt();
 			if(liststudents.containsKey(delid)) {
-				liststudents.remove(liststudents.values());
+//				liststudents.remove(liststudents.values());
+//				first error
+				liststudents.remove(delid);
 				System.out.println("Student deleted");
 			}
 			else {
@@ -42,11 +44,13 @@ public class task {
 		else if(input==4) {
 			HashMap<Integer, Student> liststudents=AddStudent(ar);
 			
-			System.out.println("Enter the student id towhom you want to update:");
+			System.out.println("Enter the student id to whom you want to update:");
 			int updid=scan.nextInt();
+			scan.nextLine();
 
 			if(liststudents.containsKey(updid)) {
-				Student s1=new Student();
+				Student s1 = liststudents.get(updid);
+				System.out.println("Enter the new details:id,name,age,course");
 				String newvalues=scan.nextLine();
 
 				String [] newdetails=newvalues.split(",");
@@ -62,9 +66,16 @@ public class task {
 				s1.setCourse(course);
 
 				liststudents.put(id,s1);
+				
+				System.out.println("Student Updated");
+				
 
 
 
+			}
+			
+			else {
+				System.out.println("Updated Values");
 			}
 			System.out.println("Updated values:");
 			for(Map.Entry<Integer,Student> map:liststudents.entrySet()) {
