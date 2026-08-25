@@ -1,0 +1,36 @@
+Develop a Console-Based Student Management System.
+Functional Requirements
+Implement the following menu:
+========== Student Management System ==========
+
+1. Add Student
+2. View All Students
+3. Search Student
+4. Update Student
+5. Delete Student
+6. Exit
+
+Enter your choice:
+Features
+1. Add Student
+Accept the following details:
+Student ID (must be unique)
+Student Name
+Age
+Course
+2. View All Students
+Display all students in a tabular format.
+3. Search Student
+Search by Student ID.
+If found, display student details.
+Otherwise display:
+Student not found.
+4. Update Student
+Search using Student ID. Allow updating:
+Name
+Age
+Course
+5. Delete Student
+Delete a student using Student ID.
+6. Exit
+Terminate the application.
