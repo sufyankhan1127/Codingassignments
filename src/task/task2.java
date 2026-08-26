@@ -57,7 +57,6 @@ public class task2 {
 			scan.nextLine();
 			System.out.println("Enter the name of the item for "+(i+1));
 			String item=scan.nextLine();
-			scan.nextLine();
 			System.out.println("Enter the quantity of item "+(i+1));
 			int quantity=scan.nextInt();
 			scan.nextLine();
@@ -74,5 +73,7 @@ public class task2 {
 			
 		}
 	}
+	
+	public static vo
 
 }
