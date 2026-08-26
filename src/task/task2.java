@@ -27,7 +27,7 @@ public class task2 {
 		    else if (choice == 4) {
 		    	deleteItem(inventory, scan);
 		    }
-		    else if (choice == 5) {
+		    else if (choice == 2) {
 		        updateItem(inventory, scan);
 		    }
 		    else if (choice == 6) {
@@ -113,6 +113,7 @@ public class task2 {
 			
 			System.out.println("Enter the updated Item name:");
 			String updname=scan.nextLine();
+			scan.nextLine();
 			System.out.println("Enter the updated Quantity:");
 			int updquantity=scan.nextInt();
 			scan.nextLine();
