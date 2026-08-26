@@ -1,6 +1,7 @@
 package task;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class task2 {
@@ -17,21 +18,21 @@ public class task2 {
 		    if (choice == 1) {
 		        addItem(inventory,scan);
 		    }
-//		    else if (choice == 2) {
-//		        viewStudents(students);
-//		    }
-//		    else if (choice == 3) {
-//		        searchStudent(students, scan);
-//		    }
-//		    else if (choice == 4) {
-//		        updateStudent(students,scan);
-//		    }
-//		    else if (choice == 5) {
-//		        deleteStudent(students, scan);
-//		    }
-//		    else if (choice == 6) {
-//		        break;
-//		    }
+		    else if (choice == 5) {
+		        viewItem(inventory);
+		    }
+		    else if (choice == 3) {
+		    	searchItem(inventory, scan);
+		    }
+		    else if (choice == 4) {
+		    	deleteItem(inventory, scan);
+		    }
+		    else if (choice == 5) {
+		        updateItem(inventory, scan);
+		    }
+		    else if (choice == 6) {
+		        break;
+		    }
 		}
 	}
 	
@@ -74,6 +75,61 @@ public class task2 {
 		}
 	}
 	
-	public static vo
+	public static void viewItem(HashMap<Integer,Inventory> inventory) {
+		for(Map.Entry<Integer, Inventory> map:inventory.entrySet()) {
+			System.out.println(map.getKey()+","+map.getValue());
+		}
+	}
+	
+	public static void searchItem(HashMap<Integer,Inventory> inventory,Scanner scan) {
+		System.out.println("Enter the id to search for the item");
+		int n=scan.nextInt();
+		
+		if(inventory.containsKey(n)) {
+			System.out.println(inventory.get(n));
+		}
+		else {
+			System.out.println("Item not found");
+		}
+	}
+	
+	public static void deleteItem(HashMap<Integer,Inventory> inventory,Scanner scan) {
+		System.out.println("Enter the id to delete the item");
+		int delid=scan.nextInt();
+		if(inventory.containsKey(delid)) {
+			inventory.remove(delid);
+			System.out.println("Item removed");
+		}
+		else {
+			System.out.println("Item not found");
+		}
+	}
+	
+	public static void updateItem(HashMap<Integer,Inventory> inventory,Scanner scan) {
+		System.out.println("Enter the id to update that product");
+		int updid=scan.nextInt();
+		if(inventory.containsKey(updid)) {
+			Inventory inv=inventory.get(updid);
+			
+			System.out.println("Enter the updated Item name:");
+			String updname=scan.nextLine();
+			System.out.println("Enter the updated Quantity:");
+			int updquantity=scan.nextInt();
+			scan.nextLine();
+			System.out.println("Enter the updated Price");
+			float updprice=scan.nextFloat();
+			scan.nextLine();
+			
+			inv.setNameofproduct(updname);
+			inv.setQuantity(updquantity);
+			inv.setPrice(updprice);
+			
+			inventory.put(updid, inv);
+		}
+		
+		else {
+			System.out.println("item does not exist");
+		}
+	}
 
 }
